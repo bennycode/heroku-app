@@ -84,7 +84,7 @@
 <body>
 
 <div id="status" role="complementary">
-    <h1>Application Status</h1>
+    <h1>Application Status!</h1>
     <ul>
         <li>App version: <g:meta name="app.version"/></li>
         <li>Grails version: <g:meta name="app.grails.version"/></li>
