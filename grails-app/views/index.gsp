@@ -82,7 +82,6 @@
 </head>
 
 <body>
-<h1>Hello World!</h1>
 
 <div id="status" role="complementary">
     <h1>Application Status</h1>
