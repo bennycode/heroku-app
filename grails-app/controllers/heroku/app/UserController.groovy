@@ -3,7 +3,18 @@ package heroku.app
 class UserController {
     def scaffold = User
 
-    def login = {}
+    def beforeInterceptor = [action: this.&auth, except: ["login"]]
+
+    def auth() {
+        if (!session.user) {
+            redirect(controller: "user", action: "login")
+            return false
+        }
+    }
+
+    def login = {
+
+    }
 
     def authenticate = {
         // GORM method: findByLoginAndPassword
