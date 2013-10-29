@@ -32,3 +32,4 @@ web-app/WEB-INF/tld/fmt.tld
 # temp files
 .DS_Store
 *.*~
+# Folders generated when running the app: src, scripts, lib
