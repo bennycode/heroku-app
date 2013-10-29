@@ -3,7 +3,7 @@ package heroku.app
 class UserController {
     def scaffold = User
 
-    def beforeInterceptor = [action: this.&auth, except: ["login"]]
+    def beforeInterceptor = [action: this.&auth,  except:["login", "authenticate", "logout"]]
 
     def auth() {
         if (!session.user) {
@@ -12,26 +12,31 @@ class UserController {
         }
     }
 
-    def login = {
-
-    }
-
     def authenticate = {
-        // GORM method: findByLoginAndPassword
+        // GORM method: findBy...
         def user = User.findByLoginAndPassword(params.login, params.password)
         if (user) {
             session.user = user
             flash.message = "Hello ${user.name}!"
-            redirect(controller: "entry", action: "list")
+            redirect(controller: "user", action: "list")
         } else {
             flash.message = "Sorry, ${params.login}. Please try again."
-            redirect(action: "login")
+            redirect(controller: "user", action: "login")
         }
+    }
+
+    def index = {
+
+    }
+
+    def login = {
+
     }
 
     def logout = {
         flash.message = "Goodbye ${session.user.name}"
         session.user = null
-        redirect(controller: "entry", action: "list")
+        // http://stackoverflow.com/questions/11144775/grails-redirect-to-index-gsp-that-is-not-in-any-controller
+        redirect(uri:'/index')
     }
 }
