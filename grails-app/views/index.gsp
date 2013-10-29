@@ -116,6 +116,9 @@
     <div id="controller-list" role="navigation">
         <h2>Available Controllers:</h2>
         <ul>
+            <g:if test="${session.user!=null}">
+            <li><g:link controller="user" action="logout">Logout</g:link></li>
+            </g:if>
             <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName }}">
                 <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
             </g:each>
