@@ -10,6 +10,7 @@
                 <div class="message">${flash.message}</div>
             </g:if>
             <g:form action="authenticate" method="post" >
+                <g:hiddenField name="test" value="${params.from}" />
                 <g:hiddenField name="myField" value="[returnPage:createLink(controller: 'book', action: 'index')]" />
                 <div class="dialog">
                     <table>

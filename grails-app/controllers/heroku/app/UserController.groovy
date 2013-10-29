@@ -3,7 +3,7 @@ package heroku.app
 class UserController {
     def scaffold = User
     // http://grails.org/doc/2.2.x/ref/Controllers/beforeInterceptor.html
-    def beforeInterceptor = [action: this.&auth, except:["login", "authenticate", "logout"]]
+    def beforeInterceptor = [action: this.&auth, except: ["login", "authenticate", "logout"]]
 
     private auth() {
         // TODO: Get "actionUri" from "beforeInterceptor"
@@ -19,8 +19,12 @@ class UserController {
         if (user) {
             session.user = user
             flash.message = "Hello ${user.name}!"
+            String from = params.test
+            String rootUrl = createLink(uri: '/');
+            int beginIndex = rootUrl.length();
+            String relativeUrl = from.substring(beginIndex-1);
             // def targetURI = request.forwardURI - request.contextPath
-            redirect(uri: request.getHeader('referer'))
+            redirect(uri: relativeUrl)
         } else {
             flash.message = "Sorry, ${params.login}. Please try again."
             redirect(controller: "user", action: "login")
@@ -39,6 +43,6 @@ class UserController {
         flash.message = "Goodbye ${session.user.name}"
         session.user = null
         // http://stackoverflow.com/questions/11144775/grails-redirect-to-index-gsp-that-is-not-in-any-controller
-        redirect(uri:'/')
+        redirect(uri: '/')
     }
 }

@@ -13,7 +13,7 @@ class BookController {
 
     def auth() {
         if (!session.user) {
-            redirect(controller: "user", action: "login")
+            redirect(controller: "user", action: "login", params: [from: request.forwardURI])
             return false
         }
     }
