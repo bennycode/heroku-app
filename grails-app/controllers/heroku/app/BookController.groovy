@@ -9,15 +9,6 @@ class BookController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def beforeInterceptor = [action: this.&auth, except: ["index", "show"]]
-
-    def auth() {
-        if (!session.user) {
-            redirect(controller: "user", action: "login", params: [from: request.forwardURI])
-            return false
-        }
-    }
-
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Book.list(params), model: [bookInstanceCount: Book.count()]

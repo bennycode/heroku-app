@@ -2,16 +2,6 @@ package heroku.app
 
 class UserController {
     def scaffold = User
-    // http://grails.org/doc/2.2.x/ref/Controllers/beforeInterceptor.html
-    def beforeInterceptor = [action: this.&auth, except: ["login", "authenticate", "logout"]]
-
-    private auth() {
-        // TODO: Get "actionUri" from "beforeInterceptor"
-        if (!session.user) {
-            redirect(controller: "user", action: "login")
-            return false
-        }
-    }
 
     def authenticate = {
         // GORM method: findBy...
