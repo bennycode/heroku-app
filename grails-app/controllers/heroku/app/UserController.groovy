@@ -19,12 +19,15 @@ class UserController {
         if (user) {
             session.user = user
             flash.message = "Hello ${user.name}!"
+            /*
             String from = params.test
             String rootUrl = createLink(uri: '/');
             int beginIndex = rootUrl.length();
-            String relativeUrl = from.substring(beginIndex-1);
-            // def targetURI = request.forwardURI - request.contextPath
+            String relativeUrl = from.substring(beginIndex-1);            
+            */
+            String relativeUrl = params.test - request.contextPath
             redirect(uri: relativeUrl)
+            
         } else {
             flash.message = "Sorry, ${params.login}. Please try again."
             redirect(controller: "user", action: "login")
