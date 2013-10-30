@@ -1,0 +1,79 @@
+﻿{
+	"subjects": [
+		{
+			"id": 6,
+			"name": "6. Klasse",
+			"imagePath": "../Images/Subjects/Mathematics.png",
+			"categories": [
+				{
+					"id": 1,
+					"name": "Bruchrechnung",
+					"topics": [
+						{
+							"name": "Allgemein",
+							"images": ["Ein Bruch besteht aus dem Zähler und dem Nenner.", "../Images/Formulas/1.png"]
+						},
+						{
+							"name": "Brüche erweitern",
+							"images": ["Brüche erweitern bedeutet, den Zähler und den Nenner mit derselben Zahl zu multiplizieren. Der Wert des Bruches ändert sich dadurch nicht.", "../Images/Formulas/2.png"]
+						},
+						{
+							"name": "Brüche kürzen",
+							"images": ["Brüche kürzen bedeutet, den Zähler und den Nenner durch dieselbe Zahl zu teilen. Der Wert des Bruches ändert sich dadurch nicht.", "../Images/Formulas/3.png"]
+						},
+						{
+							"name": "Gleichnamige Brüche",
+							"images": ["Gleichnamige Brüche werden addiert (oder subtrahiert), indem man die Zähler addiert (oder subtrahiert) und den gemeinsamen Nenner beibehält.", "../Images/Formulas/4.png"]
+						},
+						{
+							"name": "Ungleichnamige Brüche",
+							"images": ["Ungleichnamige Brüche erweitert man so, dass sie gleichnamig werden und addiert (oder subtrahiert) sie erst dann. Brücher werden multipliziert, indem die Zähler und die Nenner multipliziert werden.", "../Images/Formulas/5.png"]
+						},
+						{
+							"name": "Multiplikation von Brüchen",
+							"images": ["Man multipliziert einen Bruch mit einer Zahl, indem man den Zähler mit der Zahl multipliziert.", "../Images/Formulas/6.png", "Man multipliziert eine Zahl mit einem Bruch, indem man die Zahl mit dem Zähler multipliziert", "../Images/Formulas/7.png"]
+						},
+						{
+							"name": "Kehrwert von Brüchen",
+							"images": ["Der Kehrwert eines Bruches entsteht, indem man Zähler und Nenner vertauscht.", "Man teilt durch einen Bruch, indem man mit dem Kehrwert multipliziert.", "../Images/Formulas/8.png"]
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 7,
+			"name": "7. Klasse",
+			"categories": [
+				{
+					"id": 2,
+					"name": "Rechengesetze",
+					"topics": [
+						{
+							"name": "Distributivgesetz",
+							"images": ["../Images/Formulas/9.png"]
+						},
+						{
+							"name": "Kummutativgesetz",
+							"images": ["../Images/Formulas/10.png"]
+						},
+						{
+							"name": "Assoziativgesetz",
+							"images": ["../Images/Formulas/11.png", "../Images/Formulas/12.png"]
+						}
+					]
+				},
+				{
+					"id": 3,
+					"name": "Rechnen mit negativen Zahlen",
+					"topics": [
+						{
+							"name": "Allgemein",
+							"images": ["../Images/Formulas/13.png", "../Images/Formulas/14.png"]
+						}
+					]
+				}				
+			]			
+		}
+	]
+}
