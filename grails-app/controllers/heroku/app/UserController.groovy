@@ -25,6 +25,7 @@ class UserController {
             int beginIndex = rootUrl.length();
             String relativeUrl = from.substring(beginIndex-1);            
             */
+            log.info("Hello World");
             String relativeUrl = params.test - request.contextPath
             redirect(uri: relativeUrl)
             
