@@ -19,14 +19,8 @@ class UserController {
         if (user) {
             session.user = user
             flash.message = "Hello ${user.name}!"
-            /*
-            String from = params.test
-            String rootUrl = createLink(uri: '/');
-            int beginIndex = rootUrl.length();
-            String relativeUrl = from.substring(beginIndex-1);            
-            */
-            log.info("Hello World");
-            String relativeUrl = params.test - request.contextPath
+            def relativeUrl = params.test - request.contextPath
+            log.info("relativeUrl: " + relativeUrl);
             redirect(uri: relativeUrl)
             
         } else {
