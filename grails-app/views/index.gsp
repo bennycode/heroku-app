@@ -108,6 +108,8 @@
 <div id="page-body" role="main">
     <h1>Welcome to Grails</h1>
 
+    Environment: ${grails.util.Environment.current.name}
+
     <p>Congratulations, you have successfully started your first Grails application! At the moment
     this is the default page, feel free to modify it to either redirect to a controller or display whatever
     content you may choose. Below is a list of controllers that are currently deployed in this application,
@@ -116,8 +118,8 @@
     <div id="controller-list" role="navigation">
         <h2>Available Controllers:</h2>
         <ul>
-            <g:if test="${session.user!=null}">
-            <li><g:link controller="user" action="logout">Logout</g:link></li>
+            <g:if test="${session.user != null}">
+                <li><g:link controller="user" action="logout">Logout</g:link></li>
             </g:if>
             <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName }}">
                 <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
