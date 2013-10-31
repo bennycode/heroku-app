@@ -2,5 +2,6 @@ package heroku.app
 
 class TopicController {
 
-    def scaffold = Category
+    def scaffold = Topic
+
 }

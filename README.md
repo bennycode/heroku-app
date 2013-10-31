@@ -10,7 +10,9 @@
 
 Grails version: 2.3.1
 Groovy version: 2.1.8
+
 JVM version: 1.7.0
+Tomcat 7.0.42
 
 **Runs with:**
 
