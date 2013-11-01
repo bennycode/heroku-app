@@ -1,7 +1,7 @@
-
 import heroku.app.Book
 import heroku.app.Category
 import heroku.app.Item
+import heroku.app.Item$ItemType
 import heroku.app.Topic
 import heroku.app.User
 
@@ -16,18 +16,19 @@ class BootStrap {
         // User
         new User(login: "bennyn", password: "bennyn", name: "Benny Neugebauer").save()
 
-        // Categories & Topics
-        def topic = new Topic(name: "Multiplikation von Brüchen")
+        // Category > Topic > Item
+        def item = new Item(content: "../Images/Formulas/6.png")
+        item.type = Item$ItemType.IMAGE
         
-        // topic.addToContent("Man multipliziert einen Bruch mit einer Zahl, indem man den Zähler mit der Zahl multipliziert.")
-        // topic.addToContent("../Images/Formulas/6.png")
-
-        // def category = new Category(grade: 6, name: 'Bruchrechnung')
-        // category.addToTopics(topic)
-        // category.save()
-        topic.save();
+        def topic = new Topic(name: "Multiplikation von Brüchen")
+        topic.addToItems(item)
+        
+        def category = new Category(grade: 6, name: "Bruchrechnung")
+        category.addToTopics(topic)        
+        category.save()
         
     }
+    
     def destroy = {
     }
 }
