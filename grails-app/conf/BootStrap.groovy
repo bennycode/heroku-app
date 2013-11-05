@@ -17,13 +17,13 @@ class BootStrap {
         new User(login: "bennyn", password: "bennyn", name: "Benny Neugebauer").save()
 
         // Category > Topic > Item
-        def item = new Item(content: "../Images/Formulas/6.png")
-        item.type = Item$ItemType.IMAGE
+        // def item = new Item(content: "{\\color{Red} \\mathbf{a \\cdot (b+c)= a \\cdot b + a \\cdot c}}")
+        // item.type = Item$ItemType.IMAGE
         
-        def topic = new Topic(name: "Multiplikation von Brüchen")
-        topic.addToItems(item)
+        def topic = new Topic(name: "Distributivgesetz")
+        // topic.addToItems(item)
         
-        def category = new Category(grade: 6, name: "Bruchrechnung")
+        def category = new Category(grade: 7, name: "Rechengesetze")
         category.addToTopics(topic)        
         category.save()
         
