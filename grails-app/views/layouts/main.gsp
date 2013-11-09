@@ -49,12 +49,9 @@
         <!-- Navi -->
         <div role="navigation" class="nav">
             <ul>
-                <g:if test="${request.getSession(false) && session.user != null}">
-                    <li><g:link class="home" controller="user" action="logout">Logout</g:link></li>
-                </g:if>
-                <g:else>
-                    <li><g:link class="home" controller="user" action="login">Login</g:link></li>
-                </g:else>
+                <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName }}">
+                    <li><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
+                </g:each>
             </ul>
         </div>
         <!-- Content -->

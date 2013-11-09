@@ -31,3 +31,18 @@ a.header-main {
   font-size: 1.25em;
   font-style: italic;
 }
+
+#loginHeader {
+  float: right;
+  color: #fff;
+}
+
+#loginHeader a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#loginHeader a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
