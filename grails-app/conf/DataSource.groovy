@@ -15,8 +15,14 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            pooled = true
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+            username = "formelsammlung"
+            password = "formelsammlung"
+            // one of 'create', 'create-drop', 'update', 'validate'
+            dbCreate = "create-drop"
+            url = "jdbc:mysql://localhost:3306/formelsammlung?useUnicode=yes&characterEncoding=UTF-8"
         }
     }
     test {
