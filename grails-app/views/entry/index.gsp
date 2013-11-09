@@ -27,19 +27,15 @@
             </ul>
         </div>
 
-        <div class="list">
-            <g:each in="${entryInstanceList}"
-                    status="i"
-                    var="entryInstance">
-                <div class="entry">
-                    <span class="entry-date"><g:longDate>${entryInstance.lastUpdated}</g:longDate></span>
-
-                    <h2><g:link action="show"
-                                id="${entryInstance.id}">${entryInstance.title}</g:link></h2>
-
-                    <p>${entryInstance.summary}</p>
-                </div>
-            </g:each>
-        </div>
+    <div class="list">
+        <g:each in="${entryInstanceList}"
+                status="i"
+                var="entryInstance">
+            <g:render template="entry"
+                      bean="${entryInstance}"
+                      var="entryInstance" />
+            </div>
+        </g:each>
+    </div>
     </body>
 </html>
