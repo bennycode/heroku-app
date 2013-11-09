@@ -1,11 +1,33 @@
 .entry {
-    margin: 10px;
+  margin: 10px;
 }
 
 .entry-date {
-    color: #999;
+  color: #999;
 }
 
 p {
-    margin-top: 12px;
+  margin-top: 12px;
+}
+
+#header {
+  background: #67c;
+  padding: 2em 1em 2em 1em;
+  margin-bottom: 1em;
+}
+
+a.header-main:link, a.header-main:visited {
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+a.header-main {
+  text-decoration: none;
+}
+
+.header-sub {
+  color: #fff;
+  font-size: 1.25em;
+  font-style: italic;
 }
