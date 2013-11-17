@@ -2,12 +2,15 @@ package heroku.app
 
 class Topic {
 
-    static constraints = {
-        name blank: false, nullable: false
-    }
-    
-    static hasMany = [items: Item]
-    
-    String name
-    
+  String name
+  Category category
+
+  static constraints = {
+    name blank: false, nullable: false
+  }
+
+  String toString() {
+    return name;
+  }
+
 }
